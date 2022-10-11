@@ -5,8 +5,43 @@
         <meta charset="utf-8"> 
     </head>
 
+    <style>
+        .container {
+          height: 200px;
+          position: relative;
+          border: 3px solid black;
+          border-radius: 20px;
+        }
+        
+        .center {
+          margin: 0;
+          position: absolute;
+          top: 30%;
+          left: 40%;
+        
+        }
+
+        body{
+            font-family: 'Averia Serif Libre';
+            margin: auto; 
+            margin-top: 25vh;
+            width: 320px; height: 320px;
+        }
+
+        fieldset{
+            border-radius: 10px;
+        }
+        </style>
+
     <body>
-        <a href="admin_login.html">admin</a>
-        <a href="customer_login.html">customer</a>
+        <div class="center">
+            <fieldset>
+                <legend>Login</legend> 
+                <table>
+                <tr><td><button onClick="location.href='admin_login.html'" type="button">Admin</button></td><td><button onClick="location.href='customer_login.html'" type="button">Customer</button></td></tr>
+                <tr></tr>
+                </table>
+            </fieldset>
+        </div>
     </body>
 </html>
