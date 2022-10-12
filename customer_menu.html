@@ -22,6 +22,23 @@
                 padding: 14px 16px;
                 text-decoration: none;
                 }
+            .text-center{
+                text-align: center;
+
+            }
+            .foodchoice{
+                padding: 1%;
+                margin: 2px;
+            }
+            table{
+                text-align: center;
+                width: 100% ;
+                border-collapse: collapse;
+                margin: 2px;
+            }
+            .menu{
+                align-items: center;
+            }
     </style>
     
     <body>
@@ -39,5 +56,77 @@
                 <a class="navbar" href="index.html">Sign-Out</a>
             </li>
         </ul>
+        <h2 class="text-center">
+            Menu
+        </h2>
+        <div class="text-center foodchoice">
+            Veg<input type="radio" name="food_choice">
+            Non-Veg<input type="radio" name="food_choice">
+        </div>
+
+        <div>
+            <table border="1" class="text-center">
+                <tr>
+                    <th>Picture</th>
+                    <th>Item Name</th>
+                    <th>Ingredients</th>
+                    <th>Price</th>
+                    <th>Select Items</th>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://www.thespruceeats.com/thmb/Q91g4m7nZMTnaXcP5tiNbEgSYCk=/940x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/indian-style-burger-1957599-hero-01-266103a4bb4e4ee7b5feb4da2d2e99da.jpg" width="300px">
+                    </td>
+                    <td>
+                        Burger
+                    </td>
+                    <td>
+                        Patty , Lettuce
+                    </td>
+                    <td>
+                        $2
+                    </td>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Pic 1
+                    </td>
+                    <td>
+                        Burger
+                    </td>
+                    <td>
+                        Patty , Lettuce
+                    </td>
+                    <td>
+                        $2
+                    </td>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Pic 1
+                    </td>
+                    <td>
+                        Burger
+                    </td>
+                    <td>
+                        Patty , Lettuce
+                    </td>
+                    <td>
+                        $2
+                    </td>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                </tr>
+                
+            </table>
+        </div>
     </body>
 </html>
