@@ -65,11 +65,17 @@
 	</style>
 </head>
 
+<script>
+	var name = document.forms["myForm"]["name"];               
+    var email = document.forms["myForm"]["email"];    
+    var message = document.forms["myForm"]["phone"];
+</script>
+
 <body>
 	<h1>Feedback Form</h1>
 
 	
-	<form id="form" method="post">
+	<form name="myForm" action="" onsubmit="return validateForm()" method="post" id="form">
 
 		<div class="form-control">
 			<label form="name" id="label-name">
@@ -97,7 +103,7 @@
 			</label>
 
 			<input type="text"
-				id="phone"
+				id="phone" name="phone"
 				placeholder="Enter your phone number" />
 		</div>
 
