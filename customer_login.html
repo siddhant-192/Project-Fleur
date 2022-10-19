@@ -20,8 +20,8 @@
             <fieldset>
                 <legend>Login</legend> 
                 <table>
-                <tr><td>Phone Number</td><td><input name="phone" type="text"></td></tr>
-                <tr><td>One Time Pass</td><td><input name="otp" type="text"></td></tr>
+                <tr><td>Phone Number</td><td><input name="phone" id="phone" type="text"></td></tr>
+                <tr><td>One Time Pass</td><td><input name="otp" id="otp" type="text"></td></tr>
                 <tr><td><button onClick="validateForm()" type="button">Submit</button></td></tr>
                 </table>
             </fieldset>  
@@ -30,15 +30,15 @@
 
     <script>
         function validateForm(){ 
-            var phone = document.forms["myForm"]["phone"];               
-            var otp = document.forms["myForm"]["otp"];
-            var correct_otp = phone.value.substring(6,11);
+            var phone = document.getElementById('phone').value;               
+            var otp = document.getElementById('otp').value;               
+            var correct_otp = phone.substring(6,11);
 
-            if (Number(phone.value) != Number(correct_otp.toString()))                                  
+            if (otp == correct_otp)                                  
             { 
-                alert ("Incorrect OTP");  
+                window.location.href = "customer.html";
             }else{
-                window.location.href = "customer.html";  
+                alert ("Incorrect OTP"); 
             }
     
 }
