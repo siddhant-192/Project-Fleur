@@ -20,11 +20,28 @@
             <fieldset>
                 <legend>Login</legend> 
                 <table>
-                <tr><td>Phone Number</td><td><input type="text"></td></tr>
-                <tr><td>One Time Pass</td><td><input type="text"></td></tr>
-                <tr><td><button onClick="location.href='customer.html'" type="button">Submit</button></td></tr>
+                <tr><td>Phone Number</td><td><input name="phone" type="text"></td></tr>
+                <tr><td>One Time Pass</td><td><input name="otp" type="text"></td></tr>
+                <tr><td><button onClick="validateForm()" type="button">Submit</button></td></tr>
                 </table>
             </fieldset>  
         </form>
     </body>
+
+    <script>
+        function validateForm(){ 
+    var phone = document.forms["myForm"]["phone"];               
+    var otp = document.forms["myForm"]["otp"];
+    var ph = phone.value
+    var correct_otp = ph.substring(6,11);
+
+    if (phone.value != correct_otp)                                  
+    { 
+        alert ("Incorrect OTP");  
+    }else{
+        window.location.href = "customer.html";  
+    }
+    
+}
+    </script>
 </html>
