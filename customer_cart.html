@@ -1,28 +1,11 @@
 <html>
     <head>
         <title>Customer</title>
+        <link rel="stylesheet" type="text/css" href="navbar.css" />
     </head>
 
     <style>
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color:bisque;
-            }
-
-            li {
-                float: left;
-                }
-
-            .navbar{
-                display: block;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                }
-            
+    
             body{
             background-image: url('bg3.png');
             background-repeat: no-repeat;
@@ -33,19 +16,42 @@
     </style>
     
     <body>
-        <ul>
-            <li>
-                <a class="navbar" href="customer.html">Home</a>
-            </li>
-            <li>
-                <a class="navbar" href="customer_menu.html">Menu</a>
-            </li>
-            <li>
-                <a class="navbar" href="customer_cart.html">Cart</a>
-            </li>
-            <li>
-                <a class="navbar" href="index.html">Sign-Out</a>
-            </li>
-        </ul>
+        <nav class="menu-container">
+            <input type="checkbox" aria-label="Toggle menu" />
+            <span></span>
+            <span></span>
+            <span></span>
+          
+            <a href="#" class="menu-logo">
+              <img src="image-removebg-preview.png" alt="My Awesome Website"/>
+            </a>
+          
+            <div class="menu">
+              <ul>
+                <li>
+                  <a href="customer.html">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="customer_menu.html">
+                    Menu
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    Cart
+                  </a>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a href="index.html">
+                    Sign Out
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
     </body>
 </html>
