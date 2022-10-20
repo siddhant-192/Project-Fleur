@@ -20,11 +20,25 @@
             <fieldset>
                 <legend>Login</legend> 
                 <table>
-                <tr><td>Username</td><td><input type="text"></td></tr>
-                <tr><td>Password</td><td><input type="text"></td></tr>
-                <tr><td><button onClick="location.href='admin.html'" type="button">Submit</button></td></tr>
+                <tr><td>Username</td><td><input id="username" type="text"></td></tr>
+                <tr><td>Password</td><td><input id="password" type="text"></td></tr>
+                <tr><td><button onClick="myFunct()" type="button">Submit</button></td></tr>
                 </table>
             </fieldset>  
         </form>
     </body>
+
+    <script>
+        function myFunct(){
+            var user = document.getElementById('username').value;
+            var pass = document.getElementById('password').value;
+
+            if ((user == 'admin')&&(pass == 'pass_admin'))
+            {
+                window.location.href = "admin.html";
+            }else{
+                alert("Incorrect credentials.");
+            }
+        }
+    </script>
 </html>
