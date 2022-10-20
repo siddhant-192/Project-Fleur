@@ -34,11 +34,15 @@
             var otp = document.getElementById('otp').value;               
             var correct_otp = phone.substring(6,11);
 
-            if (otp == correct_otp)                                  
-            { 
-                window.location.href = "customer.html";
+            if(phone.length == 10){
+                if (otp == correct_otp)                                  
+                { 
+                    window.location.href = "customer.html";
+                }else{
+                    alert ("Incorrect OTP"); 
+                }
             }else{
-                alert ("Incorrect OTP"); 
+                alert("Invalid mobile number.")
             }
     
 }
