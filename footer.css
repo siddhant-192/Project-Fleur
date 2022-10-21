@@ -139,6 +139,10 @@ footer{
 	margin-bottom: 5px;
 }
 
+i.fa {
+	margin-top: 7px;
+}
+
 
 @media (max-width: 880px) {
 
