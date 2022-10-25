@@ -1,6 +1,18 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(gradogradoonf.regular.ttf);
+  }
+
+.menu-title{
+    font-size: 60px;
+    margin-top: -20px;
+    margin-bottom: -1px;
+    font-family: myFirstFont;
+}
 
 .text-center{
     text-align: center;
+    font-weight: bold;
 
 }
 .foodchoice{
@@ -35,7 +47,7 @@ border-radius: 20px;
 margin-left: 40px;
 }
 .item-card h1{
-font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+font-family: myFirstFont;
 font-size: 22px;
 margin-bottom: -8px;
 text-align: center;
