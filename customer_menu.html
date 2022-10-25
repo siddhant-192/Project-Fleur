@@ -29,6 +29,76 @@
             background-position: center;
             background-size: cover;
         }
+
+        .item-card{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            width: 250px;
+            background: white;
+            padding: 25px 40px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            text-transform: uppercase;
+            border-radius: 20px;
+            }
+        .item-card h1{
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 22px;
+            margin-bottom: -8px;
+            text-align: center;
+            margin-top: -5px;
+            }
+        .item-card p{
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: bold;
+            font-size: 13px;
+            color: grey;
+            text-align: center;
+            }
+        .item-pic{
+            background-image: url(1.png);
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            transition: .6s linear;
+            margin-bottom: 15px;
+        }
+
+        .item-picture{
+            border-radius: 15px;
+            height: 100%;
+            width: 100%;
+            object-fit: fill;
+        }
+
+        .item-info{
+            display: flex;
+            align-items: center;
+            }
+        .item-price{
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+            }
+        .item-button{
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            margin-left: auto;
+            color: black;
+            text-decoration: none;
+            border: 3px solid;
+            padding: 8px 24px;
+            border-radius: 20px;
+            transition: .4s linear;
+            font-weight: bold;
+            }
+
+        .item-button:hover{
+            transform: scale(1.06);
+            }
+
     </style>
     
     <body>
@@ -77,69 +147,23 @@
             Non-Veg<input type="radio" name="food_choice">
         </div>
 
-        <div>
-            <table border="1" class="text-center">
-                <tr>
-                    <th>Picture</th>
-                    <th>Item Name</th>
-                    <th>Ingredients</th>
-                    <th>Price</th>
-                    <th>Select Items</th>
-                    
-                </tr>
-                <tr>
-                    <td>
-                        <img src="https://www.thespruceeats.com/thmb/Q91g4m7nZMTnaXcP5tiNbEgSYCk=/940x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/indian-style-burger-1957599-hero-01-266103a4bb4e4ee7b5feb4da2d2e99da.jpg" width="300px">
-                    </td>
-                    <td>
-                        Burger
-                    </td>
-                    <td>
-                        Patty , Lettuce
-                    </td>
-                    <td>
-                        $2
-                    </td>
-                    <td>
-                        <input type="checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Pic 1
-                    </td>
-                    <td>
-                        Burger
-                    </td>
-                    <td>
-                        Patty , Lettuce
-                    </td>
-                    <td>
-                        $2
-                    </td>
-                    <td>
-                        <input type="checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Pic 1
-                    </td>
-                    <td>
-                        Burger
-                    </td>
-                    <td>
-                        Patty , Lettuce
-                    </td>
-                    <td>
-                        $2
-                    </td>
-                    <td>
-                        <input type="checkbox">
-                    </td>
-                </tr>
-                
-            </table>
+
+        <div class="item-card">
+            <h1>Borgier</h1>
+            <p>Chef's Special</p>
+            <div class="item-pic">
+                <center><img class="item-picture" src="https://www.thespruceeats.com/thmb/Q91g4m7nZMTnaXcP5tiNbEgSYCk=/940x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/indian-style-burger-1957599-hero-01-266103a4bb4e4ee7b5feb4da2d2e99da.jpg"/></center>
+            </div>
+            <div class="item-colors">
+              <span class="" data-color="#7ed6df" data-pic="url(1.png)"></span>
+            </div>
+            <div class="item-info">
+              <div class="item-price">$90</div>
+              <a href="" class="item-button">Add to Cart</a>
+            </div>
         </div>
+
     </body>
+
+
 </html>
