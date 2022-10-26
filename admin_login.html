@@ -1,230 +1,176 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Customer Login</title>
-        <meta charset="utf-8"> 
-    </head>
+	<head>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+	</head>
 
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;	
-	font-family: Raleway, sans-serif;
-}
+	<style>
+	body, html {
+	 height: 100%;
+	}
+	body {
+		font-family: "Lato", sans-serif;
+		background: rgba(255, 200, 253, 1);
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
+		color: white;
+	}
+	.container {
+		width: 400px;
+	}
+	form {
+		display: flex;
+		flex-direction: column;
+		background: transparent;
+		max-width: 320px;
+		padding: 2rem 2rem 2rem 2rem;
+		position: relative;
+		}
+	form::before, form::after {
+		position: absolute;
+		content: "";
+		width: 100%;
+		height: 100%;
+		transition: all 0.5s ease;
+	}
+	form::before {
+		z-index: -1;
+		background: transparent;
+		transform: translateX(-3.5rem) translateY(-3.75rem);
+		border: 6px solid #254dff;
+	}
+	form::after {
+		background: rgb(14, 168, 236, 1);
+		z-index: -2;
+		transform: translateX(-2rem) translateY(-2.25rem);
+	}
+	form h1 {
+		text-align: center;
+		margin: 0 0 0.25rem 0;
+		padding: 0;
+		font-size: 1.5rem;
+	}
+	form small {
+		display: block;
+		margin: 0 auto 1rem;
+		padding: 0;
+		font-size: 14px;
+	}
+	form:focus-within {
+		background: rgb(14, 168, 236);
+	}
+	form:focus-within::before {
+		width: 0%;
+		height: 0%;
+		transform: translatex(0px) translatey(0px);
+	}
+	form .field {
+		display: flex;
+		flex-flow: column-reverse;
+		margin-bottom: 1em;
+	}
+	form label, form input {
+		transition: all 0.3s ease;
+		touch-action: manipulation;
+	}
+	form label {
+		opacity: 0;
+	}
+	form input {
+		padding: 10px 20px;
+		border: 4px solid white;
+		margin: 0 1.5rem;
+		background-color: transparent !important;
+		-webkit-appearance: none;
+		color: white;
+	}
+	form input:-webkit-autofill {
+		background-color: transparent !important;
+		-webkit-box-shadow: 0 0 0px 1000px #0ea8ec inset;
+		-webkit-text-fill-color: white !important;
+	}
+	form input::placeholder {
+		color: white;
+	}
+	form input:focus {
+		color: #0e39fe;
+		font-weight: bold;
+		outline: 0;
+		border: 6px solid #0e39fe;
+	}
+	form input::-webkit-input-placeholder {
+		opacity: 1;
+		transition: inherit;
+	}
+	form input:focus::-webkit-input-placeholder {
+		opacity: 0;
+	}
+	form button {
+		border: none;
+		padding: 0.85rem 1rem;
+		margin-top: 2rem;
+		background-color: #0e39fe;
+		color: white;
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		width: 65%;
+		position: absolute;
+		bottom: -20px;
+		right: 18%;
+		letter-spacing: 0.15em;
+		transition: all 0.3s ease;
+	}
+	form button:hover {
+		border: 6px solid #090c9b;
+	}
+	form p {
+		font-size: 0.75rem;
+		line-height: 1.125rem;
+		margin: 0.5rem 1.5rem 1.75rem 1.5rem;
+	}
+	.success-message {
+		font-size: 1.25rem;
+		text-align: center;
+		line-height: 2rem;
+		margin: 1.5rem auto 5rem auto;
+	}
+	#smallMessage{
+		color: red;
+		font-weight: bold;
+	}
+	</style>
 
-body {
-	background: linear-gradient(90deg, #6962e9, #412cdb);		
-}
-
-.container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 100vh;
-}
-
-.screen {		
-	background: linear-gradient(90deg, #4b37e1, #231aa0);		
-	position: relative;	
-	height: 600px;
-	width: 360px;	
-	box-shadow: 0px 0px 24px #bab5e9;
-}
-
-.screen__content {
-	z-index: 1;
-	position: relative;	
-	height: 100%;
-}
-
-.screen__background {		
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 0;
-	-webkit-clip-path: inset(0 0 0 0);
-	clip-path: inset(0 0 0 0);	
-}
-
-.screen__background__shape {
-	transform: rotate(45deg);
-	position: absolute;
-}
-
-.screen__background__shape1 {
-	height: 520px;
-	width: 520px;
-	background: #FFF;	
-	top: -50px;
-	right: 120px;	
-	border-radius: 0 72px 0 0;
-}
-
-.screen__background__shape2 {
-	height: 220px;
-	width: 220px;
-	background: #1d0f83;	
-	top: -172px;
-	right: 0;	
-	border-radius: 32px;
-}
-
-.screen__background__shape3 {
-	height: 540px;
-	width: 190px;
-	background: linear-gradient(270deg, #9084ea, #2b24a8);
-	top: -24px;
-	right: 0;	
-	border-radius: 32px;
-}
-
-.screen__background__shape4 {
-	height: 400px;
-	width: 200px;
-	background: #1d0f83;	
-	top: 420px;
-	right: 50px;	
-	border-radius: 60px;
-}
-
-.login {
-	width: 320px;
-	padding: 30px;
-	padding-top: 156px;
-}
-
-.login__field {
-	padding: 20px 0px;	
-	position: relative;	
-}
-
-.login__icon {
-	position: absolute;
-	top: 30px;
-	color: #7875B5;
-}
-
-.login__input {
-	border: none;
-	border-bottom: 2px solid #D1D1D4;
-	background: none;
-	padding: 10px;
-	padding-left: 24px;
-	font-weight: 700;
-	width: 75%;
-	transition: .2s;
-}
-
-.login__input:active,
-.login__input:focus,
-.login__input:hover {
-	outline: none;
-	border-bottom-color: #6A679E;
-}
-
-.login__submit {
-	background: #fff;
-	font-size: 14px;
-	margin-top: 30px;
-	padding: 16px 20px;
-	border-radius: 26px;
-	border: 1px solid #D4D3E8;
-	text-transform: uppercase;
-	font-weight: 700;
-	display: flex;
-	align-items: center;
-	width: 100%;
-	color: #4C489D;
-	box-shadow: 0px 2px 2px #5C5696;
-	cursor: pointer;
-	transition: .2s;
-}
-
-.login__submit:active,
-.login__submit:focus,
-.login__submit:hover {
-	border-color: #6A679E;
-	outline: none;
-}
-
-.button__icon {
-	font-size: 24px;
-	margin-left: auto;
-	color: #7875B5;
-}
-
-.social-login {	
-	position: absolute;
-	height: 140px;
-	width: 160px;
-	text-align: center;
-	bottom: 0px;
-	right: 0px;
-	color: #fff;
-}
-
-.social-icons {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.social-login__icon {
-	padding: 20px 10px;
-	color: #fff;
-	text-decoration: none;	
-	text-shadow: 0px 0px 8px #7875B5;
-}
-
-.social-login__icon:hover {
-	transform: scale(1.5);	
-}
-    </style>
-
-    <body>
-        <div class="container">
-            <div class="screen">
-                <div class="screen__content">
-                    <form class="login">
-                        <div class="login__field">
-                            <i class="login__icon fas fa-user"></i>
-                            <input name="username" id="username" type="text" class="login__input" placeholder="Username">
-                        </div>
-                        <div class="login__field">
-                            <i class="login__icon fas fa-lock"></i>
-                            <input name="password" id="password" type="password" class="login__input" placeholder="Password">
-                        </div>
-                        <button class="button login__submit" onClick="myFunct()" type="button">
-                            <span class="button__text">Log In Now</span>
-                            <i class="button__icon fas fa-chevron-right"></i>
-                        </button>				
-                    </form>
-				</div>
-				<div class="screen__background">
-					<span class="screen__background__shape screen__background__shape4"></span>
-					<span class="screen__background__shape screen__background__shape3"></span>		
-					<span class="screen__background__shape screen__background__shape2"></span>
-					<span class="screen__background__shape screen__background__shape1"></span>
-				</div>		
-			</div>
+	<body>
+		<div class="container">
+			<form id="form" autocomplete="off">
+			  <h1 id="message">Get Started</h1>
+			  <small id="smallMessage"> </small>
+			  <div class="field">
+				<input type="text" name="email" placeholder="Username" id="email" autocomplete="off"/>
+				<label for="email">Username</label>
+			  </div>
+			  <div class="field">
+				<input type="password" name="password" placeholder="Password" id="password" autocomplete="off"/>
+				<label for="password">Password</label>
+			  </div>
+			  <button id="submit" onclick="myFunct(); return false">Sign In</button>
+			  <p>By signing in, I agree to to the Terms of Service and Privacy Policy</p></form>
 		</div>
-    </body>
+	</body>
 
-    <script>
+	<script>
         function myFunct(){
-            var user = document.getElementById('username').value;
+            var user = document.getElementById('email').value;
             var pass = document.getElementById('password').value;
 
             if ((user == 'admin')&&(pass == 'pass_admin'))
             {
                 window.location.href = "admin.html";
             }else{
-                alert("Incorrect credentials.");
+                document.getElementById('smallMessage').innerHTML = "Invalid Credentials.";
             }
         }
     </script>
