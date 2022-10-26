@@ -2,40 +2,38 @@
 <html>
     <head>
         <title>Index Page</title>
-        <meta charset="utf-8"> 
+        <meta charset="utf-8"/> 
     </head>
 
     <style>
         .container {
-          height: 200px;
-          position: relative;
-          border: 3px solid black;
-          border-radius: 20px;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
         }
         
         .center {
           margin: 0;
-          position: absolute;
-          top: 30%;
-          left: 40%;
-        
+          position:relative;
         }
 
         body{
             font-family: 'Averia Serif Libre';
             margin: auto; 
             margin-top: 25vh;
-            width: 320px; height: 320px;
+            width: 350px; height: 320px;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             font-weight: bold;
         }
 
         fieldset{
             border-radius: 10px;
+            border: 5px solid black;
         }
 
         body{
-            background-image: url('images/bg2.png');
+            background-color: rgb(115, 206, 248);
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
@@ -99,9 +97,27 @@
     padding: 0 40px;
   }
 }
+
+h1{
+  text-align: center;
+  font-family:monospace;
+  font-size: 75px;
+}
+
+p{
+  text-align: center;
+  font-family:monospace;
+  width: 100%;
+  margin-top: -30px;
+  margin-bottom: 40px;
+}
         </style>
 
     <body>
+      <h1><span class="title_text"></span>.</h1>
+      <p><span class="intro_text"></span>.</p>
+      
+      <div class="container">
         <div class="center">
             <fieldset>
                 <legend>Login</legend> 
@@ -112,5 +128,33 @@
                 </table>
             </fieldset>
         </div>
+      </div>
     </body>
+
+    <script src="autotyping.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      
+      const title_text = ['Hello'];
+        const title_typing = new AutoTyping('.title_text', title_text, {
+            typeSpeed: 150,
+            deleteSpeed: 150,
+            waitBeforeDelete: 20000,
+            waitBetweenWords: 500,
+        });
+
+        const intro_text = [' ',' ',' ',' ','Welcome to our project','We hope you like it'];
+        const intro_typing = new AutoTyping('.intro_text', intro_text, {
+            typeSpeed: 80,
+            deleteSpeed: 80,
+            waitBeforeDelete: 500,
+            waitBetweenWords: 500,
+        });
+        
+        title_typing.start();
+        intro_typing.start()
+    });
+  </script>
+
+  
 </html>
