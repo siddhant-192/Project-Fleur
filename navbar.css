@@ -15,8 +15,7 @@ body {
     -webkit-user-select: none;
     user-select: none;
     box-sizing: border-box;
-    background-color: rgba(40, 43, 46,1);
-    max-height: 70px;
+    background: linear-gradient(to bottom,  rgba(40, 43, 46, 1) 0%, rgba(40, 43, 46, 0) 100%);
     }
 
     .menu-logo {
