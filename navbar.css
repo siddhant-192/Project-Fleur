@@ -16,6 +16,7 @@ body {
     user-select: none;
     box-sizing: border-box;
     background-color: rgba(40, 43, 46,1);
+    max-height: 70px;
     }
 
     .menu-logo {
