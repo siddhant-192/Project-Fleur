@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+	<title>
+		Customer Feedback
+	</title>
+
+	<style>
+		body {
+			font-family: Verdana;
+			text-align: center;
+		}
+
+		form {
+			background-color: #fff;
+			max-width: 500px;
+			margin: 25px auto;
+			padding: 30px 20px;
+			box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+		}
+
+		.form-control {
+			text-align: left;
+			margin-bottom: 25px;
+		}
+
+
+		.form-control label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		.form-control input,
+		.form-control select,
+		.form-control textarea {
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			padding: 10px;
+			display: block;
+			width: 95%;
+		}
+
+        button{
+          align-items: center;
+          background-color: rgb(200, 195, 195);
+          border: 2px solid #111;
+          border-radius: 8px;
+          box-sizing: border-box;
+          color: #111;
+          cursor: pointer;
+          display: flex;
+          font-family: Inter,sans-serif;
+          font-size: 16px;
+          height: 48px;
+          justify-content: center;
+          line-height: 24px;
+          max-width: 100%;
+          padding: 0 25px;
+          position: relative;
+          text-align: center;
+          text-decoration: none;
+        }
+
+        .submit-button{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+	</style>
+</head>
+
+<script>
+	var name = document.getElementById("label-name");
+    var price = document.getElementById("label-price");
+    var img_location = document.getElementById("label-image");
+    var category = document.getElementById("label-category");      
+</script>
+
+<body>
+	<h1>Add Item</h1>
+
+	
+	<form name="myForm" action="" onsubmit="return validateForm()" method="post" id="form">
+
+		<div class="form-control">
+			<label form="name" id="label-name">
+				Name
+			</label>
+
+			<input type="text"
+				name="name"
+				placeholder="Enter name" />
+		</div>
+
+        <div class="form-control">
+			<label form="name" id="label-price">
+				Price
+			</label>
+
+			<input type="text"
+				name="name"
+				placeholder="Enter price" />
+		</div>
+
+        <div class="form-control">
+			<label form="name" id="label-image">
+				Image
+			</label>
+
+			<input type="text"
+				name="name"
+				placeholder="Enter image location" />
+		</div>
+
+        <div class="form-control">
+			<label form="name" id="label-category">
+				Category
+			</label>
+
+			<input type="text"
+				name="name"
+				placeholder="Veg / Non-veg" />
+		</div>
+
+        <div class="submit-button">
+            <button type="submit" value="submit">
+                Submit
+            </button>
+        </div>
+	</form>
+</body>
+
+</html>
