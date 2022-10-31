@@ -6,6 +6,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content=
 		"width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="" />
+        <script type="text/javascript" src="customer_feedback_script.js"></script>
 	<title>
 		Customer Feedback
 	</title>
@@ -23,7 +25,12 @@
 			max-width: 500px;
 			margin: 25px auto;
 			padding: 30px 20px;
-			box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+			box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);border-radius: 5px;
+		}
+
+		h1{
+			margin-top: 0;
+			margin-bottom: 20px;
 		}
 
 		.form-control {
@@ -71,6 +78,11 @@
 			margin-top: 40px;
 			margin-bottom: 10px;
 			padding: 5px;
+		}
+
+		.error{
+			color: #D8000C;
+			background-color: #FFBABA;
 		}
 
 		.recommend-1{
@@ -222,11 +234,9 @@
 </script>
 
 <body>
-	<h1>Feedback Form</h1>
-
 	
 	<form name="myForm" action="" onsubmit="return validateForm()" method="post" id="form">
-
+		<h1>Feedback Form</h1>
 		<div class="form-control">
 			<label form="name" id="label-name">
 				Name
@@ -234,7 +244,8 @@
 
 			<input type="text"
 				name="name"
-				placeholder="Enter your name" />
+				placeholder="Enter your name" id="name" />
+				<span class="error" id="errorname"></span>
 		</div>
 
 		<div class="form-control">
@@ -244,7 +255,8 @@
 
 			<input type="email"
 				name="email"
-				placeholder="Enter your email" />
+				placeholder="Enter your email" id="email"/>
+			<span class="error" id="erroremail"></span>
 		</div>
 
         <div class="form-control">
@@ -254,7 +266,8 @@
 
 			<input type="text"
 				id="phone" name="phone"
-				placeholder="Enter your phone number" />
+				placeholder="Enter your phone number" id="phone" />
+				<span class="error" id="errorphone"></span>
 		</div>
 
 		<div class="form-control">
@@ -264,7 +277,8 @@
             
 			<input type="text"
 				id="age"
-				placeholder="Enter your age" />
+				placeholder="Enter your age" id="age" />
+				<span class="error" id="errorage"></span>
 		</div>
 
 		<div class="form-control">
