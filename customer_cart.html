@@ -19,7 +19,7 @@
         body {
           background-color: rgb(242, 206, 140);
           color: rgb(0, 0, 0);
-          font-family: 'Open Sans', sans-serif;
+          font-family: -apple-system, BlinkMacSystemFont;
           font-size: 62.5%;
           margin: 0 auto;
         }
@@ -30,17 +30,13 @@
           text-decoration: none;
         }
 
-        strong {
-          font-weight: bold;
-        }
-
-        p {
+        p{
           margin: 0.75rem 0 0;
         }
 
         h1 {
-          font-size: 0.75rem;
-          font-weight: normal;
+          font-size: 0.8rem;
+          font-weight: bold;
           margin: 0;
           padding: 0;
         }
@@ -97,11 +93,12 @@
 
         main {
           clear: both;
-          font-size: 0.75rem;
+          font-size: 0.8rem;
           margin: 0 auto;
           overflow: hidden;
           padding: 1rem 0;
           width: 960px;
+          font-weight: bold;
         }
 
         .basket,
@@ -202,6 +199,7 @@
 
         .product-frame {
           border: 1px solid #aaa;
+          border-radius: 5px;
         }
 
         .product-details {
@@ -235,6 +233,7 @@
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
           box-sizing: border-box;
+          border-radius: 8px;
         }
 
         .summary-total-items {
@@ -285,6 +284,7 @@
           text-transform: uppercase;
           padding: 0.625rem 0;
           width: 100%;
+          border-radius: 5px;
         }
 
         .summary-delivery-selection {
@@ -423,14 +423,14 @@
                     <img src="" alt="food_image" class="product-frame">
                   </div>
                   <div class="product-details">
-                    <h1><strong><span class="item-quantity">4</span> x </strong> food_name</h1>
+                    <h1>food_name</h1>
                     <p></p>
-                    <p>Product Code - 00000000</p>
+                    <p>.</p>
                   </div>
                 </div>
                 <div class="price">00.00</div>
                 <div class="quantity">
-                  <input type="number" value="4" min="1" class="quantity-field">
+                  <input type="number" value="1" min="1" class="quantity-field">
                 </div>
                 <div class="subtotal">00.00</div>
                 <div class="remove">
