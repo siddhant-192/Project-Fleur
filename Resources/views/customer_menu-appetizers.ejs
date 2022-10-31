@@ -1,14 +1,15 @@
 <html>
     <head>
         <title>Customer</title>
-        <link rel="stylesheet" type="text/css" href="navbar.css" />
-        <link rel="stylesheet" type="text/css" href="customer_menu-appetizers.css" />
+        <link rel="stylesheet" type="text/css" href="../css/navbar.css" />
+        <link rel="stylesheet" type="text/css" href="../css/customer_menu-appetizers.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="footer.css" />
+        <link rel="stylesheet" type="text/css" href="../css/footer.css" />
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="style.css">
+        
     </head>
+    
 
     <body>
         <nav class="menu-container">
@@ -18,7 +19,7 @@
             <span></span>
           
             <a href="customer.html" class="menu-logo">
-              <img src="images/image-removebg-preview.png" alt="My Awesome Website"/>
+              <img src="../img/image-removebg-preview.png" alt="My Awesome Website"/>
             </a>
           
             <div class="menu">
@@ -57,10 +58,10 @@
                 <form class="toggle">
         
                     <input type="radio" id="choice1" name="choice" value="veg">
-                    <label for="choice1"><img src="images/veg-toggle.png" width="30px" height="30px"/></label>
+                    <label for="choice1"><img src="../img/veg-toggle.png" width="30px" height="30px"/></label>
         
                     <input type="radio" id="choice2" name="choice" value="nonveg">
-                    <label for="choice2"><img src="images/nonveg-toggle.png" width="30px" height="30"/></label>
+                    <label for="choice2"><img src="../img/nonveg-toggle.png" width="30px" height="30"/></label>
         
                     <div id="flap"><span class="content"></span></div>
         
@@ -78,11 +79,11 @@
                     <center><img class="item-picture" src="<%= appetizers.img %>"/></center>
                 </div>
                 <div class="item-colors">
-                  <span class="" data-color="#7ed6df" data-pic="url(1.png)"></span>
+                  <span class="" data-color="#7ed6df" ></span>
                 </div>
                 <div class="item-info">
                   <div class="item-price">$<%= appetizers.price %></div>
-                  <a href="" class="item-button fa fa-shopping-cart"></a>
+                  <button data-appetizers ="<%= JSON.stringify(appetizers) %>" class="item-button fa fa-shopping-cart" ></button>
                 </div>
             </div>
           <% })%>
@@ -230,7 +231,13 @@
       </footer>
     </body>
 
+    
+    
+
+     <script src="../js/app.js"></script>
+
     <script>
+   
         const st = {};
 
 st.flap = document.querySelector('#flap');

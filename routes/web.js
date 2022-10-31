@@ -1,6 +1,5 @@
 const appetizer_controller = require('../app/http/controllers/appetizer_controller')
-
-
+const cart_controller = require('../app/http/controllers/cart_controller')
 function initRoutes(app){
     app.get('/' , (req,res) =>{
         res.render('home.ejs')
@@ -12,10 +11,9 @@ function initRoutes(app){
         res.render('customer')
     })
     app.get('/customer_cuisine.html',(req,res)=>{
-        res.render('customer_cuisine.ejs')
-    })
-
-    
+        res.render('customer_cuisine.ejs') })
+    app.get('/customer_cart.html',cart_controller().index)
+    app.post('/update-cart',cart_controller().update)
     //appetizer_controller().index
 
     app.get('/customer_menu-appetizers.html', appetizer_controller().index)

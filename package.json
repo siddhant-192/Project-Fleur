@@ -1,15 +1,29 @@
 {
-    "scripts": {
-        "dev": "nodemon server.js",
-        "development": "mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "prod": "npm run production",
-        "production": "mix --production"
-    },
-    "dependencies": {
-        "cross-env": "^7.0.3",
-        "webpack": "^5.74.0"
-    }
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "noty": "^3.2.0-beta-deprecated",
+    "webpack": "^5.74.0"
+  },
+  "name": "project-fleur",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siddhant-192/Project-Fleur.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siddhant-192/Project-Fleur/issues"
+  },
+  "homepage": "https://github.com/siddhant-192/Project-Fleur#readme",
+  "devDependencies": {
+    "laravel-mix": "^6.0.49"
+  }
 }
