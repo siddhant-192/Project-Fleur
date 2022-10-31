@@ -2,6 +2,7 @@
     <head>
         <title>Customer</title>
         <link rel="stylesheet" type="text/css" href="navbar.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <style>
@@ -97,7 +98,7 @@
           margin: 0 auto;
           overflow: hidden;
           padding: 1rem 0;
-          width: 960px;
+          width: 1000px;
           font-weight: bold;
         }
 
@@ -156,25 +157,7 @@
         }
 
         .subtotal {
-          text-align: right;
-        }
-
-        .remove {
-          bottom: 1.125rem;
-          float: right;
-          position: absolute;
-          right: 0;
-          text-align: right;
-          width: 45%;
-        }
-
-        .remove button {
-          background-color: transparent;
-          color: rgb(176, 11, 11);
-          float: none;
-          text-decoration: underline;
-          text-transform: uppercase;
-        }
+          text-align: right;}
 
         .item-heading {
           padding-left: 4.375rem;
@@ -198,7 +181,7 @@
         }
 
         .product-frame {
-          border: 1px solid #aaa;
+          border: 2px solid rgb(0, 0, 0);
           border-radius: 5px;
         }
 
@@ -295,6 +278,92 @@
           font-size: 0.625rem;
           height: 34px;
           width: 100%;
+        }
+
+        .button-18 {
+          align-items: center;
+          float: right;
+          background-color: transparent;
+          border: 4px solid black;
+          border-radius: 100px;
+          box-sizing: border-box;
+          color: #ffffff;
+          cursor: pointer;
+          display: inline-flex;
+          font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+          font-size: 16px;
+          font-weight: 600;
+          justify-content: center;
+          line-height: 20px;
+          max-width: 480px;
+          min-height: 40px;
+          min-width: 0px;
+          overflow: hidden;
+          padding: 0px;
+          padding-left: 20px;
+          padding-right: 20px;
+          text-align: center;
+          touch-action: manipulation;
+          transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+          user-select: none;
+          -webkit-user-select: none;
+          vertical-align: middle;
+          margin-top: 10px;
+        }
+
+        .button-18:hover,
+        .button-18:focus { 
+          background-color: #ce3a3a;
+          color: #ffffff;
+        }
+
+        .button-18:active {
+          background: #09223b;
+          color: rgb(255, 255, 255, .7);
+        }
+
+        .button-18:disabled { 
+          cursor: not-allowed;
+          background: rgba(0, 0, 0, .08);
+          color: rgba(0, 0, 0, .3);
+        }
+
+        .quantity {
+         display: flex;
+         justify-content: center; 
+        }
+
+        .quantity input {
+          -webkit-appearance: none;
+          border: none;
+          text-align: center;
+          width: 32px;
+          font-size: 16px;
+          color: #43484D;
+          font-weight: 300;
+          border-radius: 3px;
+        }
+        
+        button[class*=btn] {
+          width: 30px;
+          height: 30px;
+          background-color: transparent;
+          border-radius: 6px;
+          border: none;
+          cursor: pointer;
+        }
+        .minus-btn img {
+          display: flex;
+          justify-content: center;
+        }
+        .plus-btn img {
+          display: flex;
+          justify-content: center;
+        }
+        
+        button:focus,
+        input:focus {
+          outline:0;
         }
 
         @media screen and (max-width: 640px) {
@@ -420,7 +489,7 @@
               <div class="basket-product">
                 <div class="item">
                   <div class="product-image">
-                    <img src="" alt="food_image" class="product-frame">
+                    <img src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Antipasto-Appetizer-Salad_exps30904_W101973175B09_13_3bC_RMS-2.jpg?w=1200" alt="food_image" class="product-frame">
                   </div>
                   <div class="product-details">
                     <h1>food_name</h1>
@@ -430,11 +499,19 @@
                 </div>
                 <div class="price">00.00</div>
                 <div class="quantity">
-                  <input type="number" value="1" min="1" class="quantity-field">
+                  <button class="plus-btn" type="button" name="button" onclick="plus(); return false">
+                    <img src="images/plus.svg" alt="" />
+                  </button>
+                  <input type="text" name="name" value="1" id='quty'>
+                  <button class="minus-btn" type="button" name="button" onclick="minus(); return false">
+                    <img src="images/minus.svg" alt="" />
+                  </button>
                 </div>
                 <div class="subtotal">00.00</div>
                 <div class="remove">
-                  <button>Remove</button>
+                  <button class="button-18">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                  </button>
                 </div>
               </div>
 
@@ -547,5 +624,23 @@
         updateSumItems();
       });
     }
+
+    function plus(){
+	      var qut = parseInt(document.getElementById('quty').value,10);
+	      qut=qut+1;
+	      qut = qut + '';
+	      document.getElementById('quty').value = qut;
+	    }
+
+	    function minus(){
+	    	var qut = parseInt(document.getElementById('quty').value,10);
+        if(qut>1){
+          qut=qut-1;
+          qut = qut + '';
+          document.getElementById('quty').value = qut;
+        }else{
+          
+        }
+	    }
     </script>
 </html>
