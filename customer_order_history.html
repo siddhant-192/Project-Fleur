@@ -1,0 +1,284 @@
+<html>
+    <head>
+        <title>Customer</title>
+        <link rel="stylesheet" type="text/css" href="navbar.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <style>
+
+body {
+  background-color: rgb(242, 206, 140);
+}
+body * {
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #327a81;
+  color: white;
+  font-size: 1.5em;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+.table-users {
+  border: 1px solid #327a81;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  max-width: calc(100% - 2em);
+  margin: 1em auto;
+  overflow: hidden;
+  width: 1200px;
+}
+
+table {
+  width: 100%;
+}
+table td, table th {
+  color: #2b686e;
+  padding: 20px 0px;
+}
+table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+table th {
+  background-color: #daeff1;
+  font-weight: bold;
+}
+table tr:nth-child(2n) {
+  background-color: white;
+}
+table tr:nth-child(2n+1) {
+  background-color: #edf7f8;
+}
+
+.button-33 {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+@media screen and (max-width: 700px) {
+  table, tr, td {
+    display: block;
+  }
+
+  td:first-child {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+  }
+  td:not(:first-child) {
+    clear: both;
+    margin-left: 100px;
+    padding: 4px 20px 4px 90px;
+    position: relative;
+    text-align: left;
+  }
+  td:not(:first-child):before {
+    color: #91ced4;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+  }
+  td:nth-child(2):before {
+    content: "Name:";
+  }
+  td:nth-child(3):before {
+    content: "Email:";
+  }
+  td:nth-child(4):before {
+    content: "Phone:";
+  }
+  td:nth-child(5):before {
+    content: "Comments:";
+  }
+
+  tr {
+    padding: 10px 0;
+    position: relative;
+  }
+  tr:first-child {
+    display: none;
+  }
+}
+
+.button-44:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05);
+}
+
+
+@media screen and (max-width: 500px) {
+  .header {
+    background-color: transparent;
+    color: white;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  td:first-child {
+    background-color: #c8e7ea;
+    border-bottom: 1px solid #91ced4;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    top: 0;
+    transform: translateY(0);
+    width: 100%;
+  }
+  td:not(:first-child) {
+    margin: 0;
+    padding: 5px 1em;
+    width: 100%;
+  }
+  td:not(:first-child):before {
+    font-size: 0.8em;
+    padding-top: 0.3em;
+    position: relative;
+  }
+  td:last-child {
+    padding-bottom: 1rem !important;
+  }
+
+  tr {
+    background-color: white !important;
+    border: 1px solid #6cbec6;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 0;
+    padding: 0;
+  }
+
+  .table-users {
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+  }
+}
+    </style>
+    
+    <body>
+        <nav class="menu-container">
+            <input type="checkbox" aria-label="Toggle menu" />
+            <span></span>
+            <span></span>
+            <span></span>
+          
+            <a href="admin.html" class="menu-logo">
+              <img src="images/image-removebg-preview.png" alt="My Awesome Website"/>
+            </a>
+          
+            <div class="menu">
+              <ul>
+                <li>
+                  <a href="admin.html">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="admin_menu.html">
+                    Menu
+                  </a>
+                </li>
+                <li>
+                  <a href="admin_orders.html">
+                    Orders
+                  </a>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a href="index.html">
+                    Sign Out
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+
+
+<div class="table-users">
+    <div class="header">Order History</div>
+    
+    <table cellspacing="0">
+       <tr>
+          <th>Order ID</th>
+          <th>Date</th>
+          <th>Phone</th>
+          <th width="230">Food Items</th>
+          <th>Admin</th>
+          <th>Status</th>
+          <th>Reorder</th>
+       </tr>
+ 
+       <tr>
+            <td>ID-52342</td>
+            <td>31/10/2022</td>
+            <td>8766632670</td>
+            <td>Chicken Tandoori Masala</td>
+            <td>Admin 1</td>
+            <td><p>Completed</p></td>
+            <td><button class="button-33 button-44" role="button">Reorder</button></td>
+       </tr>
+ 
+       <tr>
+            <td>ID-23423</td>
+            <td>27/10/2022</td>
+            <td>6725387762</td>
+            <td>Chicken Wings</td>
+            <td>Admin 1</td>
+            <td><p>Completed</p></td>
+            <td><button class="button-33 button-44" role="button">Reorder</button></td>
+        </tr>
+    
+        <tr>
+            <td>ID-33125</td>
+            <td>15/09/2022</td>
+            <td>9867672453</td>
+            <td>Paneer Biryani</td>
+            <td>Admin 2</td>
+            <td><p>Cancelled</p></td>
+            <td><button class="button-33 button-44" role="button">Reorder</button></td>
+        </tr>
+        
+        <tr>
+            <td>ID-52123</td>
+            <td>01/09/2022</td>
+            <td>8744547809</td>
+            <td>Egg Roll</td>
+            <td>Admin 1</td>
+            <td><p>Completed</p></td>
+            <td><button class="button-33 button-44" role="button">Reorder</button></td>
+        </tr>
+    </table>
+ </div>
+ 
+ 
+          
+    </body>
+
+</html>
