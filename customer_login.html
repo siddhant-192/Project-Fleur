@@ -147,18 +147,20 @@
 	<body>
 		<div class="container">
 			<form id="form" autocomplete="off">
-			  <h1 id="message">Get Started</h1>
+			  <h1 id="message">Login</h1>
 			  <small id="smallMessage"> </small>
 			  <div class="field">
 				<input type="text" name="email" placeholder="Phone No." id="email" autocomplete="off"/>
 				<label for="email">Phone No.</label>
 			  </div>
 			  <div class="field">
-				<input type="text" name="password" placeholder="One Time Password" id="password" autocomplete="off"/>
-				<label for="password">Password</label>
+				<input type="text" name="password" placeholder="Pin" id="password" autocomplete="off"/>
+				<label for="password">Pin</label>
 			  </div>
 			  <button id="submit" onclick="validateForm(); return false">Sign In</button>
-			  <p>By signing in, I agree to to the Terms of Service and Privacy Policy</p></form>
+			  <p>By signing in, I agree to to the Terms of Service and Privacy Policy.</p>
+			  <p>Don't have an account? <a href="customer_signup.html">Sign Up</a></p>
+			</form>
 		</div>
 	</body>
 
@@ -173,7 +175,7 @@
                 { 
                     window.location.href = "customer.html";
                 }else{
-                    document.getElementById('smallMessage').innerHTML = "Invalid OTP."; 
+                    document.getElementById('smallMessage').innerHTML = "Invalid Pin."; 
                 }
             }else{
 				document.getElementById('smallMessage').innerHTML = "Invalid mobile number.";
