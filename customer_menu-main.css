@@ -129,60 +129,11 @@ transform: scale(1.06);
     max-height: 50px;
 }
 
-.toggle {
-    position: relative;
-    border: solid var(--border-width) var(--accent);
-    border-radius: var(--border-radius);
-    transition: transform cubic-bezier(0, 0, 0.30, 2) .4s;
-    transform-style: preserve-3d;
+
+button:first-of-type{
+    margin-right: 10px;
 }
 
-.toggle>input[type="radio"] {
-    display: none;
-}
-
-.toggle>#choice1:checked~#flap {
-    transform: rotateY(-180deg);
-}
-
-.toggle>#choice1:checked~#flap>.content {
-    transform: rotateY(-180deg);
-}
-
-.toggle>#choice2:checked~#flap {
-    transform: rotateY(0deg);
-}
-
-.toggle>label {
-    display: inline-block;
-    padding: 10px;
-    font-size: var(--font-size);
-    text-align: center;
-    color: var(--accent);
-    cursor: pointer;
-}
-
-.toggle>#flap {
-    position: absolute;
-    top: calc( 0px );
-    left: 50%;
-    height: calc(100%);
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: var(--font-size);
-    background-color: green;
-    border-top-right-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
-    transform-style: preserve-3d;
-    transform-origin: left;
-    transition: transform cubic-bezier(0.4, 0, 0.2, 1) .5s;
-    opacity: .4;
-}
-
-.toggle>#flap>.content {
-    color: #333;
-    transition: transform 0s linear .25s;
-    transform-style: preserve-3d;
+button{
+    margin-top: 10px;
 }
