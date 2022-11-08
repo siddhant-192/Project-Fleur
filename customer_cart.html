@@ -36,7 +36,7 @@
         }
 
         h1 {
-          font-size: 0.8rem;
+          font-size: 1.2rem;
           font-weight: bold;
           margin: 0;
           padding: 0;
@@ -94,12 +94,15 @@
 
         main {
           clear: both;
-          font-size: 0.8rem;
+          font-size: 1.2rem;
           margin: 0 auto;
           overflow: hidden;
           padding: 1rem 0;
-          width: 1000px;
+          width: 1300px;
           font-weight: bold;
+          display: flex;
+          justify-content: center;
+          padding-bottom: 50px;
         }
 
         .basket,
@@ -112,6 +115,10 @@
 
         .basket {
           width: 70%;
+          background-color: #fff;
+          border-radius: 10px;
+          padding-bottom: 20px;
+          box-shadow: 0px 20px 40px rgba(197, 195, 192,0.7);
         }
 
         .basket-module {
@@ -174,6 +181,18 @@
 
         .product-image {
           width: 35%;
+          transition: transform .2s;
+          border-radius: 5px;
+        }
+
+        .product-image:hover {
+          transform: scale(1.1);
+        }
+
+        .cart-item-image{
+          transition: transform .2s;
+          border-radius: 5px;
+          border: 2px solid black;
         }
 
         .product-details {
@@ -192,6 +211,24 @@
           box-sizing: border-box;
         }
 
+        .table-number{
+          border-style: solid;
+          border-width: 1px;
+          border-color: #000;
+          border-radius: 50px;
+          margin-top: 0px;
+          margin-bottom: 12px;
+          width: 70%;
+          font-size: 1rem;
+          text-align: center;
+          padding: 5px;
+        }
+
+        .table-number-cont{
+          display: flex;
+          justify-content: center;
+        }
+
         .quantity-field {
           background-color: #ccc;
           border: 1px solid #aaa;
@@ -204,7 +241,7 @@
         aside {
           float: right;
           position: relative;
-          width: 30%;
+          width: 20%;
         }
 
         .summary {
@@ -432,6 +469,9 @@
           .product-details {
             padding: 0 1rem;
           }
+          .invisible{
+            visibility: hidden;
+          }
 }
     </style>
     
@@ -495,12 +535,12 @@
               <div class="basket-product">
                 <div class="item">
                   <div class="product-image">
-                    <img src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Antipasto-Appetizer-Salad_exps30904_W101973175B09_13_3bC_RMS-2.jpg?w=1200" alt="food_image" class="product-frame">
+                    <img class="cart-item-image" src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Antipasto-Appetizer-Salad_exps30904_W101973175B09_13_3bC_RMS-2.jpg?w=1200" alt="food_image" class="product-frame">
                   </div>
                   <div class="product-details">
                     <h1>food_name</h1>
                     <p></p>
-                    <p>.</p>
+                    <p class="invisible">.</p>
                   </div>
                 </div>
                 <div class="price">00.00</div>
@@ -531,8 +571,10 @@
 
                 <div class="summary-total">
                   <div class="total-title">Total</div>
+                  
                   <div class="total-value final-value" id="basket-total">130.00</div>
                 </div>
+                <div class="table-number-cont"><input class="table-number" type="text" placeholder="Enter Table No."></div>
                 <div class="summary-checkout">
                   <button class="checkout-cta">Go to Secure Checkout</button>
                 </div>
