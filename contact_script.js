@@ -43,6 +43,6 @@ function validateForm(){
     }else{
         document.getElementById('errormsg').innerHTML="";  
     }
-
-    return true; 
+    
+    return true;
 }
